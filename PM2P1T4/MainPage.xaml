@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2P1T4.MainPage">
+
+    <StackLayout Padding="10, 10, 10, 10">
+        <AbsoluteLayout WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" BackgroundColor="AntiqueWhite">
+            <Image x:Name="imgpersona" WidthRequest="200" HeightRequest="200"></Image>
+            <Label x:Name="txttomarfoto" Padding="60, 85, 60, 85" FontAttributes="Bold" Text="Fotografía" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+        </AbsoluteLayout>
+
+        <StackLayout>
+            <Label Text="Nombre" Margin="0, 25, 0, 0" TextColor="Black" FontSize="Medium"></Label>
+            <Entry Keyboard="Text" x:Name="Nombre" BackgroundColor="DodgerBlue" TextColor="White"></Entry>
+        </StackLayout>
+
+        <StackLayout>
+            <Label Text="Descripción" Margin="0, 0, 0, 0" TextColor="Black" FontSize="Medium"></Label>
+            <Entry Keyboard="Text" x:Name="Descripcion" BackgroundColor="DodgerBlue" TextColor="White"></Entry>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Margin="0, 25, 0, 0">
+            <Button Text="Tomar Foto" HorizontalOptions="FillAndExpand" HeightRequest="50" BackgroundColor="#EED56C" BorderColor="Black" BorderWidth="1" Margin="0,5,0,0"
+                x:Name="tomarfoto" Clicked="tomarfoto_Clicked"></Button>
+            <Button Text="a SQLite" HorizontalOptions="FillAndExpand" HeightRequest="50" BackgroundColor="#EED56C" BorderColor="Black" BorderWidth="1" Margin="0,5,0,0"
+                x:Name="btnasqlite" Clicked="btnasqlite_Clicked"></Button>
+        </StackLayout>
+        <Button Text="Ver Personas" HeightRequest="50" BackgroundColor="#EED56C" BorderColor="Black" BorderWidth="1" Margin="0,5,0,0"
+                x:Name="verpersonas" Clicked="verpersonas_Clicked"></Button>
+    </StackLayout>
+
+</ContentPage>

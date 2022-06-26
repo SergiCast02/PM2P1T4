@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:PM2P1T4.converter"
+             x:Class="PM2P1T4.views.listapersonas">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ByteArrayToImage x:Key="ByteToImage"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Orientation="Vertical" Margin="25,25,25,25">
+        <ScrollView HeightRequest="550">
+            <ListView x:Name="ListaPersonas" ItemTapped="ListaPersonas_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label HorizontalTextAlignment="Center" Padding="5, 10, 5, 10" Grid.Column="0"
+                                       Text="{Binding id}"/>
+                                <Label HorizontalTextAlignment="Center" Padding="5, 10, 5, 10" Grid.Column="1"
+                                       Text="{Binding nombre}"/>
+                                <Image HorizontalOptions="FillAndExpand" Grid.Column="2"
+                                       Source="{Binding foto, Converter={StaticResource ByteToImage}}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
